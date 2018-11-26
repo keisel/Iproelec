@@ -1,0 +1,10 @@
+body{
+    padding-top: 100px;
+    background: rgb(224, 224, 224);
+ }
+
+    #button{
+    background-color: #E55439;
+    color: #fff;
+    font-weight: 600;
+    }

@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+       <div class="col-xs-12 col-lg-6 col-sm-12 col-md-8">
+          <h2 class="color">Registrar Trabajador/Colaborador</h2>
+       </div>
+       <div class="col-xs-8 col-lg-offset-2 col-lg-4 col-sm-6 col-md-4">
+          <div class="input-group margin-top" >
+             <input type="text" class="form-control" placeholder="Ingrese Rut o Nombre " >
+             <span class="input-group-btn ">
+             <button class="btn " type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+             </span>
+          </div>
+       </div>
+    </div>
+    <hr/>
+    <div class="row">
+       <div class="col-lg-12 ">
+          <ul class="nav nav-pills ">
+            <li ><a routerLink="/datos-personales" id="nav-color" class="text-color-nav" > Datos Personales</a></li>
+            <li ><a routerLink="/datos-laborales" id="nav-color" class="text-color-nav" >Datos Laborales</a></li>
+            <li ><a routerLink="/cursos" id="nav-color-click" class="text-color-nav"  >Cursos y Capacitaciones</a></li>
+          </ul>
+       </div>
+    </div>
+    <div class="row">
+       <div class="tab-content margin-tab-top">
+          <div class="tab-pane fade in active" id="home">
+             <div class="col-lg-2 col-xs-6 col-sm-3 col-md-3 text-center img-center">
+                <img width="150" height="150" src="assets/iproelec/1.jpg" class="img-responsive ">
+                <label id="margin-bottom" class="margin-top" >Hernán Gamaliel Torres Valdes</label>
+             </div>
+             <div id="add" class="text-red">
+                <div class="col-lg-10 col-xs-12">
+                   <div class="col-lg-3 col-xs-4 ">
+                      <label for="formGroup-lg">Curso</label>
+                      <div class="form-group"> 
+                         <select name="curso[]" class="form-control" required>
+                           <option value="0">Seleccione curso</option>
+                         </select>
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-xs-4">
+                      <label for="formGroup-lg">Nota</label>
+                      <div class="form-group">
+                         <select name="nota[]" class="form-control" required> <option value="0">Seleccione nota</option> </select>
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-xs-4">
+                      <label for="formGroup-lg">Caducidad</label>
+                      <div class="form-group">
+                         <input type="text" class="form-control datepicker" name="caducidad[]" placeholder="Fecha de caducidad"  required>
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-xs-4">
+                      <label for="formGroup-lg">Asistencia</label>
+                      <div class="form-group">
+                         <input class="input-a" id="input" type="file" name="asistencia[]">
+                        
+                         <label class="label-a" id="input" for="input" ><span>Agregar Archivo</span></label>
+
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-xs-4">
+                      <label for="formGroup-lg">Prueba</label>
+                      <div class="form-group">
+                         <input class="input-a" id="prueba" type="file" name="prueba[]">  
+                         <label class="label-a" id="prueba" for="prueba" ><span>Agregar Archivo</span></label>
+                      </div>
+                   </div>
+                   <div class="col-lg-1 col-xs-4 margin-boton-plus ">
+                      <a class="date"><button type="button" class="btn btn-success addButton " onclick="dynamic_add();" > <i class="fa fa-plus"></i> </button></a>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

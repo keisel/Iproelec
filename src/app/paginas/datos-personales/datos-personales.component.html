@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+     <div class="col-xs-12 col-lg-6 col-sm-12 col-md-8">
+        <h2 class="color">Registrar Trabajador/Colaborador</h2>
+     </div>
+     <div class="col-xs-8 col-lg-offset-2 col-lg-4 col-sm-6 col-md-4">
+        <div class="input-group margin-top" >
+           <input type="text" class="form-control" placeholder="Ingrese Rut o Nombre " >
+           <span class="input-group-btn ">
+           <button class="btn " type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+           </span>
+        </div>
+     </div>
+  </div>
+  <hr/>
+  <div class="row">
+     <div class="col-lg-12 ">
+        <ul class="nav nav-pills ">
+           <li ><a routerLink="/datos-personales" id="nav-color-click" class="text-color-nav" > Datos Personales</a></li>
+           <li ><a routerLink="/datos-laborales" id="nav-color" class="text-color-nav" >Datos Laborales</a></li>
+           <li ><a routerLink="/cursos" id="nav-color" class="text-color-nav"  >Cursos y Capacitaciones</a></li>
+        </ul>
+     </div>
+  </div>
+  <div class="row">
+     <div class="tab-content margin-tab-top">
+        <div class="tab-pane fade in active" id="home">
+           <div class="col-lg-2 col-xs-6 col-sm-3 col-md-3 text-center img-center">
+              <div class="form-group">
+                 <label  id="label-foto" for="input-a" ><span>Agregar Foto</span></label>
+                 <span class="input-a" ><input  id="input-a" type="file" name="asistencia[]"></span>
+              </div>
+           </div>
+           <div id="phones" class="text-red">
+              <div class="col-lg-10 col-xs-12">
+                 <div class="col-lg-3 col-xs-6 col-sm-4 ">
+                    <label for="formGroup-lg">Nombre</label>
+                    <div class="form-group">
+                       <input class="form-control" name="nombre" type="text" placeholder="Ingrese nombre*">
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Rut</label>
+                    <div class="form-group">
+                       <input class="form-control"  name="rut" type="text" placeholder="Ingrese rut">
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Cargo</label>
+                    <div class="form-group">
+                       <input class="form-control"  name="cargo" type="text" placeholder="Ingrese el cargo*">
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Área</label>
+                    <div class="form-group">
+                       <input class="form-control"  name="area" type="text" placeholder="Ingrese el área*">
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Fecha de Nacimiento</label>
+                    <div class="form-group">
+                       <input type="text" class="form-control datepicker" name="date" placeholder="Fecha de nacimiento"  required>
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Empresa</label>
+                    <div class="form-group">
+                       <input class="form-control"  name="empresa" type="text" placeholder="Ingrese empresa">
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Teléfono</label>
+                    <div class="form-group">
+                       <input class="form-control"  name="telefono" type="text" placeholder="Ingrese el teléfono*">
+                    </div>
+                 </div>
+                 <div class="col-lg-3 col-xs-6 col-sm-4">
+                    <label for="formGroup-lg">Email</label>
+                    <div class="form-group">
+                       <input class="form-control"  name="email" type="text" placeholder="Ingrese email*" required>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="row">
+     <div class="col-lg-offset-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 margin-tab-top">
+        <button id="button-guard" type="submit" class="btn  btn-block" type="button">Guardar</button>
+     </div>
+  </div>
+</div>

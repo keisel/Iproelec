@@ -3,12 +3,148 @@
 <head>
   <meta charset="utf-8">
   <title>AngularIproelec</title>
-  <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.css">
+      <link rel="icon" type="image/png" href="assets/iproelec/icon.png" sizes="196x196">
+       <link rel="stylesheet" type="text/css" href="assets/css/estilos.css">
 </head>
 <body>
   <app-root></app-root>
+
+
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/Chart.js"></script>
+  <link rel="stylesheet" href="assets/datePicker/css/bootstrap-datepicker3.css">
+  <script src="assets/datePicker/js/bootstrap-datepicker.js"></script>
+  <script src="assets/datePicker/locales/bootstrap-datepicker.es.min.js"></script>
+  <script>
+   var add = 1;
+      function dynamic_phones() {
+      add++;
+      var objTo = document.getElementById('phones')
+      var divtest = document.createElement("div");
+      divtest.setAttribute("class", "form-group removeclass"+add);
+          var rdiv = 'removeclass'+add;
+          divtest.innerHTML = '<div class="col-lg-10 col-xs-12"><div class="col-lg-3 col-xs-4 "> <div class="form-group"> <select name="documento[]" class="form-control" required> <option value="0">Seleccione documento</option> </select></div></div>'+
+                        '<div class="col-lg-3 col-xs-4"><div class="form-group"> <input class="form-control"  name="plazo[]" type="text" placeholder="Plazo del documento"></div></div>'+' <div class="col-lg-3 col-xs-4"><div class="form-group"> <input type="text" class="form-control datepicker" name="caducidad[]" placeholder="Fecha de caducidad" required> </div></div>'+'<div class="col-lg-2 col-xs-4"> <div class="form-group"> <input class="input-a" id="p'+ add +'" type="file" name="asistencia[]"> <label class="label-a" id="p'+ add +'" for="p'+ add +'"><span>Agregar Archivo</span> </label> </div></div>'+
+                              ' <div class="col-lg-1 col-xs-4"> <button type="button" class="btn btn-danger" onclick="remove_dynamic_phones('+ add +');" > <i class="fa fa-minus"></i> </button></span></div> </div>';
+                  objTo.appendChild(divtest)
+              }
+    
+      function remove_dynamic_phones(rid) {
+      $('.removeclass'+rid).remove();
+      }
+ </script>
+ <script>
+    $(function (){
+      $('.date').on('click',buscar);
+     });
+     function  buscar(){
+       $( ".datepicker" ).datepicker({
+         format: "yyyy/mm/dd",
+         maxViewMode: 2,
+         todayBtn: "linked",
+         language: "es", 
+         todayHighlight: true,  
+         autoclose:true,
+       });
+     }
+    $(document).ready(function(){
+       $('body #phones').on('change','input[type=file]', function(){
+          id=$(this).next('label').attr('id');
+          var filename = jQuery(this).val().split('\\').pop();
+          var idname = jQuery(this).attr('id');
+          $("label"+ '#'+id).text(filename);
+          console.log(jQuery(this));
+          console.log(filename);
+          console.log(idname);
+          jQuery('span.'+idname).next().find('span').html(filename);
+       });
+       $('input').filter('.datepicker').datepicker({
+         format: "yyyy/mm/dd",
+         maxViewMode: 2,
+         todayBtn: "linked",
+         language: "es", 
+         todayHighlight: true,  
+         autoclose:true,
+       }); 
+    });
+   // esta es el script de datos personales, todo lo de arriba es de datos laborales
+    $(document).ready(function(){ 
+     jQuery('#input-a').change(function(){
+          var filename = jQuery(this).val().split('\\').pop();
+          var idname = jQuery(this).attr('id');
+          $('#label-foto').text(filename);
+          console.log(jQuery(this));
+          console.log(filename);
+          console.log(idname);
+         });
+         $('.datepicker').datepicker({
+               format: "yyyy/mm/dd",
+               maxViewMode: 2,
+               todayBtn: "linked",
+               language: "es", 
+               todayHighlight: true,  
+               autoclose:true,
+             });  
+         });
+         // script de fichas personal
+         $(document).ready(function(){
+          var pieData = [{value: 65,color:"#707070",highlight: "#0c62ab",label: "No Aprobado"},
+             {
+               value: 35,
+               color: "#E55439",
+               highlight: "#a9ad47",
+               label: "Aprobado"
+             }      
+           ];
+           var ctx2 = document.getElementById("chart-area2").getContext("2d");
+           window.myPie = new Chart(ctx2).Doughnut(pieData);
+         
+           $('.datepicker').datepicker({
+           format: "yyyy/mm/dd",
+           maxViewMode: 2,
+           todayBtn: "linked",
+           language: "es", 
+           todayHighlight: true,  
+           autoclose:true,
+         });       
+          });
+
+          // vista cursos
+       
+         var add = 1;
+         function dynamic_add() {
+         add++;
+         var objTo = document.getElementById('add')
+         var divtest = document.createElement("div");
+         divtest.setAttribute("class", "form-group removeclass"+add);
+         var rdiv = 'removeclass'+add;
+         divtest.innerHTML = '<div class="col-lg-10 col-xs-12"><div class="col-lg-3 col-xs-4 "> <div class="form-group"> <select name="curso[]" class="form-control" required> <option value="0">Seleccione curso</option> </select> </div></div>'+
+               '<div class="col-lg-2 col-xs-4"><div class="form-group"> <select name="nota[]" class="form-control" required> <option value="0">Seleccione nota</option> </select> </div></div>'+' <div class="col-lg-2 col-xs-4"><div class="form-group"> <input type="text" class="form-control datepicker" name="caducidad[]" placeholder="Fecha de caducidad" required> </div></div>'+'<div class="col-lg-2 col-xs-4"> <div class="form-group"> <input class="input-a" id="p'+ add +'" type="file" name="asistencia[]"> <label class="label-a" id="p'+ add +'" for="p'+ add +'"><span>Agregar Archivo</span> </label> </div></div>'+'<div class="col-lg-2 col-xs-4"> <div class="form-group"> <input class="input-a" id="a'+ add +'" type="file" name="prueba[]"> <label class="label-a" id="a'+ add +'" for="a'+ add +'"><span>Agregar Archivo</span> </label> </div></div>'+
+                     ' <div class="col-lg-1 col-xs-4"> <button type="button" class="btn btn-danger" onclick="remove_dynamic_add('+ add +');" > <i class="fa fa-minus"></i> </button></span></div> </div>';
+         objTo.appendChild(divtest)
+         }
+         
+         function remove_dynamic_add(rid) {
+         $('.removeclass'+rid).remove();
+         }
+
+          $(document).ready(function(){
+            $('body #add').on('change','input[type=file]', function(){   
+               id=$(this).next('label').attr('id');
+               var filename = jQuery(this).val().split('\\').pop();
+               var idname = jQuery(this).attr('id');
+               $("label"+ '#'+id).text(filename);
+               console.log(jQuery(this));
+               console.log(filename);
+               console.log(idname);
+               jQuery('span.'+idname).next().find('span').html(filename);
+            })
+         });
+ </script>
 </body>
 </html>
